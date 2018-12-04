@@ -1,7 +1,7 @@
 #include "main.h"
 #include "init.h"
 
-#define NUM_SCRIPTS 5										// Number of autonomous scripts
+//#define NUM_SCRIPTS 5										// Number of autonomous scripts
 
 // array fo scripts descriptions/names displayed in selection menu
 const char* titles[] = {"Skills", "autoRedLeft", "AutoBlueLeft", "autoRedRight", "autoBlueRight"};
@@ -85,6 +85,12 @@ void disabled() {}
  */
 void competition_initialize() {
 	pros::lcd::set_text(1, "Autonomous Mode Select");
+
+  // Write script 0 selection as first choice to screen
+	if (scriptNumber == 0) {
+		pros::lcd::print(2, "Script#: %d\n", scriptNumber);
+		pros::lcd::print(3, titles[scriptNumber]);
+	}
 
   pros::lcd::register_btn0_cb(on_left_button);
 	pros::lcd::register_btn1_cb(on_center_button);

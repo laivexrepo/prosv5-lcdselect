@@ -1,4 +1,5 @@
 #include "main.h"
+#include "portdef.h"
 
 /**
  * Runs the user autonomous code. This function will be started in its own task
@@ -12,34 +13,16 @@
  * from where it left off.
  */
 
-// global variables defined some where else
+// global variables defined some where else - initialize.cpp
 extern int selection;
 extern char* titles[];
 
-void skillRun() {
-  pros::lcd::print(2, "Auto:  skillRun");
-
-};
-
-void autoRedLeft() {
-  pros::lcd::print(2, "Auto:  autoRedLeft");
-
-};
-
-void autoBlueLeft() {
-  pros::lcd::print(2, "Auto:  autoBlueLeft");
-
-};
-
-void autoRedRight() {
-  pros::lcd::print(2, "Auto:  autoRedRight");
-
-};
-
-void autoBlueRight() {
-  pros::lcd::print(2, "Auto:  autoBlueRight");
-
-};
+// functions are located autoroutine.cpp
+extern void skillRun();
+extern void autoRedLeft();
+extern void autoBlueLeft();
+extern void autoRedRight();
+extern void autoBlueRight();
 
 void autonomous() {
 
